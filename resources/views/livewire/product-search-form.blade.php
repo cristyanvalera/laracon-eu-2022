@@ -1,20 +1,20 @@
 <div>
     <form id="product-search-form" class="ph-24">
         <fieldset>
-            <legend>Search products</legend>
+            <legend>{{ __('Search products') }}</legend>
 
             <label for="property_value">
-                <span class="label">Property value:</span>
+                <span class="label">{{ __('Property value') }}:</span>
                 <input type="text" name="property_value" id="property_value">
             </label>
 
             <label for="deposit_amount">
-                <span class="label">Deposit amount:</span>
+                <span class="label">{{ __('Deposit amount') }}:</span>
                 <input type="text" name="deposit_amount" id="deposit_amount">
             </label>
 
             <button type="submit" class="button mt-30">
-                Find products
+                {{ __('Buscar productos') }}
             </button>
         </fieldset>
     </form>

@@ -1,22 +1,22 @@
 <div>
     @if ($ltvCalculation)
         <section class="results">
-            <h2>Calculation results</h2>
+            <h2>{{ __('Calculation results') }}</h2>
             <div class="summary">
                 <div>
-                    <strong>LTV:</strong> {{ $ltvCalculation->ltv }}%
+                    <strong>{{ __('LTV') }}:</strong> {{ $ltvCalculation->ltv }}%
                 </div>
                 <div>
-                    <strong>Loan amount:</strong> £{{ number_format($ltvCalculation->netLoan, 2) }}
+                    <strong>{{ __('Loan amount') }}:</strong> £{{ number_format($ltvCalculation->netLoan, 2) }}
                 </div>
             </div>
 
-            @if($productQuotes->isNotEmpty())
+            @if ($productQuotes->isNotEmpty())
                 <section class="availableProducts">
-                    <h3>Available products</h3>
+                    <h3>{{ __('Available products') }}</h3>
 
                     <ul class="productList">
-                        @foreach($productQuotes as $quote)
+                        @foreach ($productQuotes as $quote)
                             <li>
                                 <article class="box product">
                                     <h4>{{ $quote->product->name }}</h4>
@@ -47,15 +47,15 @@
                 </section>
             @else
                 <div class="noResults">
-                    <strong>No product matches your search criteria</strong>
-                    <p>Try adjusting the details on the left, for example, increasing the deposit amount.</p>
+                    <strong>{{ __('No product matches your search criteria') }}</strong>
+                    <p>{{ __('Try adjusting the details on the left, for example, increasing the deposit amount.') }}</p>
                 </div>
             @endif
         </section>
     @else
         <div class="noResults">
-            <strong>Complete the form on the left</strong>
-            <p>To begin your product search, please enter a property value and a deposit amount.</p>
+            <strong>{{ __('Complete the form on the left') }}</strong>
+            <p>{{ __('To begin your product search, please enter a property value and a deposit amount.') }}</p>
         </div>
     @endif
 </div>
