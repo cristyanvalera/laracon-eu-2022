@@ -48,6 +48,10 @@ class ProductSearchResults extends Component
             return null;
         }
 
+        if ($this->propertyValue === '' || $this->depositAmount === '') {
+            return null;
+        }
+
         return $this->calculateLtv->calculate($this->propertyValue, $this->depositAmount);
     }
 
