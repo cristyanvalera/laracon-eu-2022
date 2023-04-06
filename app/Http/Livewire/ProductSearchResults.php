@@ -12,9 +12,9 @@ class ProductSearchResults extends Component
 {
     protected $listeners = ['searchProducts'];
 
-    public float $propertyValue = 0.0;
+    public ?float $propertyValue = null;
 
-    public float $depositAmount = 0.0;
+    public ?float $depositAmount = null;
 
     private CalculateLtv $calculateLtv;
     private GetProductQuotes $getProductQuotes;
