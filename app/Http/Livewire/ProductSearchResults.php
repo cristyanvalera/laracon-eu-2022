@@ -3,35 +3,34 @@
 namespace App\Http\Livewire;
 
 use App\Dto\LtvCalculation;
-use App\Models\Product;
-use App\Services\CalculateLtv;
-use App\Services\GetProductQuotes;
+use App\Services\{CalculateLtv, GetProductQuotes};
 use Illuminate\Support\Collection;
+use Illuminate\View\View;
 use Livewire\Component;
 
 class ProductSearchResults extends Component
 {
     protected $listeners = ['searchProducts'];
 
-    public $propertyValue;
+    public float $propertyValue = 0.0;
 
-    public $depositAmount;
+    public float $depositAmount = 0.0;
 
     private CalculateLtv $calculateLtv;
     private GetProductQuotes $getProductQuotes;
 
-    public function boot(CalculateLtv $calculateLtv, GetProductQuotes $getProductQuotes)
+    public function boot(CalculateLtv $calculateLtv, GetProductQuotes $getProductQuotes): void
     {
         $this->calculateLtv = $calculateLtv;
         $this->getProductQuotes = $getProductQuotes;
     }
 
-    public function searchProducts($formData)
+    public function searchProducts(array $formData): void
     {
         [$this->propertyValue, $this->depositAmount] = $formData;
     }
 
-    public function render()
+    public function render(): View
     {
         $ltvCalculation = $this->calculateLtv();
         $productQuotes = $this->getProductQuotes($ltvCalculation);
