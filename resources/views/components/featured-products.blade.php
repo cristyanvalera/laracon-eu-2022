@@ -3,7 +3,7 @@
         <h2>{{ __('Featured products') }}</h2>
 
         <ul class="featuredList">
-            @foreach($featuredProducts as $product)
+            @foreach ($featuredProducts as $product)
                 <li>{{ $product->name }}</li>
             @endforeach
         </ul>

@@ -14,7 +14,7 @@
             </label>
 
             <button type="submit" class="button mt-30">
-                {{ __('Buscar productos') }}
+                {{ __('Find products') }}
             </button>
         </fieldset>
     </form>

@@ -25,19 +25,19 @@
                                         <dt>Max LTV</dt>
                                         <dd>{{ $quote->product->max_ltv }}%</dd>
 
-                                        <dt>Product Fee</dt>
+                                        <dt>{{ __('Product Fee') }}</dt>
                                         <dd>{{ $quote->product->fee }}%</dd>
 
-                                        <dt>Interest rate</dt>
+                                        <dt>{{ __('Interest rate') }}</dt>
                                         <dd>{{ $quote->product->interest_rate }}%</dd>
 
-                                        <dt>Product fee amount</dt>
+                                        <dt>{{ __('Product fee amount') }}</dt>
                                         <dd>£{{ number_format($quote->feeAmount, 2) }}</dd>
 
-                                        <dt>Gross loan amount</dt>
+                                        <dt>{{ __('Gross loan amount') }}</dt>
                                         <dd>£{{ number_format($quote->grossLoanAmount, 2) }}</dd>
 
-                                        <dt>Monthly interest</dt>
+                                        <dt>{{ __('Monthly interest') }}</dt>
                                         <dd>£{{ number_format($quote->monthlyInterest, 2) }}</dd>
                                     </dl>
                                 </article>
@@ -48,7 +48,8 @@
             @else
                 <div class="noResults">
                     <strong>{{ __('No product matches your search criteria') }}</strong>
-                    <p>{{ __('Try adjusting the details on the left, for example, increasing the deposit amount.') }}</p>
+                    <p>{{ __('Try adjusting the details on the left, for example, increasing the deposit amount.') }}
+                    </p>
                 </div>
             @endif
         </section>

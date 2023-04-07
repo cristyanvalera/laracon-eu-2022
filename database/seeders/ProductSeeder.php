@@ -15,91 +15,91 @@ class ProductSeeder extends Seeder
     public function run()
     {
         $this->createFeaturedProduct(
-            name: 'Featured product with LTV 50%',
+            name: 'Producto destacado con LTV 50%',
             maxLtv: 50,
             fee: 1,
         );
 
         $this->createFeaturedProduct(
-            name: 'Featured product with LTV 55%',
+            name: 'Producto destacado con LTV 55%',
             maxLtv: 55,
             fee: 1.5,
         );
 
         $this->createFeaturedProduct(
-            name: 'Featured product with LTV 60%',
+            name: 'Producto destacado con LTV 60%',
             maxLtv: 60,
             fee: 2,
         );
 
         $this->createFeaturedProduct(
-            name: 'Featured product with LTV 65%',
+            name: 'Producto destacado con LTV 65%',
             maxLtv: 65,
             fee: 2.5,
         );
 
         $this->createFeaturedProduct(
-            name: 'Featured product with LTV 70%',
+            name: 'Producto destacado con LTV 70%',
             maxLtv: 70,
             fee: 3,
         );
 
         $this->createFeaturedProduct(
-            name: 'Featured product with LTV 75%',
+            name: 'Producto destacado con LTV 75%',
             maxLtv: 75,
             fee: 3.5,
         );
 
         $this->createFeaturedProduct(
-            name: 'Featured product with LTV 80%',
+            name: 'Producto destacado con LTV 80%',
             maxLtv: 80,
             fee: 4,
         );
 
         $this->createFeaturedProduct(
-            name: 'Normal product with LTV 50%',
+            name: 'Producto normal con LTV 50%',
             maxLtv: 50,
             fee: 1,
         );
 
         $this->createFeaturedProduct(
-            name: 'Normal product with LTV 55%',
+            name: 'Producto normal con LTV 55%',
             maxLtv: 55,
             fee: 1.5,
         );
 
         $this->createProduct(
-            name: 'Normal product with LTV 60%',
+            name: 'Producto normal con LTV 60%',
             maxLtv: 60,
             fee: 2,
         );
 
         $this->createProduct(
-            name: 'Normal product with LTV 65%',
+            name: 'Producto normal con LTV 65%',
             maxLtv: 65,
             fee: 2.5,
         );
 
         $this->createProduct(
-            name: 'Normal product with LTV 70%',
+            name: 'Producto normal con LTV 70%',
             maxLtv: 70,
             fee: 3,
         );
 
         $this->createProduct(
-            name: 'Normal product with LTV 75%',
+            name: 'Producto normal con LTV 75%',
             maxLtv: 75,
             fee: 3.5,
         );
 
         $this->createProduct(
-            name: 'Normal product with LTV 80%',
+            name: 'Producto normal con LTV 80%',
             maxLtv: 80,
             fee: 4,
         );
     }
 
-    private function createFeaturedProduct(string $name, float $maxLtv, $fee)
+    private function createFeaturedProduct(string $name, float $maxLtv, int|float $fee): void
     {
         Product::create([
             'name' => $name,
@@ -110,7 +110,7 @@ class ProductSeeder extends Seeder
         ]);
     }
 
-    private function createProduct(string $name, float $maxLtv, $fee)
+    private function createProduct(string $name, float $maxLtv, int|float $fee): void
     {
         Product::create([
             'name' => $name,
